@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker-Style Arduino Commands</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: #00ff9f;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #00ff9f, #40a158);
+      color: black;
+      padding: 30px;
+      text-align: center;
+      text-shadow: 0 0 10px #00ff9f, 0 0 20px #00e0ff;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #00e0ff;
+      border-bottom: 2px solid #00ff9f;
+      padding-bottom: 5px;
+      text-shadow: 0 0 8px #00e0ff;
+    }
+    .command {
+      background: #111;
+      border: 1px solid #00ff9f;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px #00ff9f;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .command:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px #00e0ff;
+    }
+    .command h3 {
+      margin-top: 0;
+      color: #fff1ff;
+      text-shadow: 0 0 10px #f5e7f5;
+    }
+    code {
+      background: #000;
+      color: #00ff9f;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      text-shadow: 0 0 6px #00ff9f;
+    }
+    footer {
+      background: linear-gradient(90deg, #00e0ff, #ff00ff);
+      color: black;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00e0ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ Hacker-Style Arduino Commands ⚡</h1>
+    <p>Neon quick reference for cyber coders</p>
+  </header>
+
+  <section>
+    <div class="command">
+      <h3>pinMode()</h3>
+      <p>Sets a pin as input or output.</p>
+      <p><strong>Example:</strong> <code>pinMode(13, OUTPUT);</code></p>
+    </div>
+
+    <div class="command">
+      <h3>digitalWrite()</h3>
+      <p>Writes HIGH or LOW to a digital pin.</p>
+      <p><strong>Example:</strong> <code>digitalWrite(13, HIGH);</code></p>
+    </div>
+
+    <div class="command">
+      <h3>digitalRead()</h3>
+      <p>Reads the value from a digital pin (HIGH or LOW).</p>
+      <p><strong>Example:</strong> <code>int buttonState = digitalRead(2);</code></p>
+    </div>
+
+    <div class="command">
+      <h3>analogRead()</h3>
+      <p>Reads the value from an analog pin (0–1023).</p>
+      <p><strong>Example:</strong> <code>int sensorValue = analogRead(A0);</code></p>
+    </div>
+
+    <div class="command">
+      <h3>analogWrite()</h3>
+      <p>Writes an analog value (PWM wave) to a pin.</p>
+      <p><strong>Example:</strong> <code>analogWrite(9, 128);</code></p>
+    </div>
+
+    <div class="command">
+      <h3>delay()</h3>
+      <p>Pauses the program for a specified time (milliseconds).</p>
+      <p><strong>Example:</strong> <code>delay(1000);</code></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>⚡ Arduino Hacker Reference - Neon Edition ⚡</p>
+  </footer>
+</body>
+</html>

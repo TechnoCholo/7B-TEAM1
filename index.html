@@ -37,7 +37,7 @@
     }
 
     nav button:hover {
-      background: #333;
+      background: #444c5c; /* deep slate blue */
       transform: scale(1.05);
     }
 
@@ -81,11 +81,20 @@
     }
 
     .content-box {
-      background: #ffffff; /* White inner box */
-      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
       margin: 15px 0;
+      padding: 20px;
       border-radius: 10px;
+      background: #ffffff;
       text-align: justify;
+    }
+
+    /* Alternate layout: even boxes → image left, odd boxes → image right */
+    .content-box:nth-child(even) {
+      flex-direction: row-reverse;
     }
 
     .highlight {
@@ -96,12 +105,25 @@
       margin-bottom: 10px;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+
     .image {
-        margin: 20px;
-        height: 75px;
-        width: 75px;
+      flex: 0 0 150px;       /* fixed square size */
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     /* keeps square crop */
+      border-radius: 20px;   /* rounded corners */
+      display: block;
+    }
+
     ul {
       list-style: none;
       padding: 0;
@@ -110,6 +132,14 @@
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
+    }
+
+    /* Responsive tweak: stack on small screens */
+    @media (max-width: 600px) {
+      .content-box {
+        flex-direction: column !important;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -149,22 +179,28 @@
     <h1 class="section-title">Types of Bones</h1>
     <div class="container">
       <div class="content-box">
-        <div class="highlight">Flat Bones</div>
-        <p>Protect internal organs and provide broad surfaces for muscle attachment.</p>
+        <div>
+          <div class="highlight">Flat Bones</div>
+          <p>Protect internal organs and provide broad surfaces for muscle attachment.</p>
+        </div>
         <div class="image">
             <img src="Images/SKFlatbones" alt="Skeletal System">
         </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Long Bones</div>
-        <p>Support body weight, allow movement, and store minerals.</p>
+        <div>
+          <div class="highlight">Long Bones</div>
+          <p>Support body weight, allow movement, and store minerals.</p>
+        </div>
         <div class="image">
             <img src="Images/SKLongbones" alt="Skeletal System">
         </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Short Bones</div>
-        <p>Cube-shaped, providing stability and controlled movement.</p>
+        <div>
+          <div class="highlight">Short Bones</div>
+          <p>Cube-shaped, providing stability and controlled movement.</p>
+        </div>
         <div class="image">
             <img src="Images/SKShortbones" alt="Skeletal System">
         </div>
@@ -177,23 +213,40 @@
     <h1 class="section-title">Diseases & Injuries</h1>
     <div class="container">
       <div class="content-box">
-        <div class="highlight">Osteoporosis</div>
-        <p>Bones become porous and fragile due to decreased bone mass.</p>
+        <div>
+          <div class="highlight">Osteoporosis</div>
+          <p>Bones become porous and fragile due to decreased bone mass.</p>
+        </div>
         <div class="image">
-            <img src="Images/SKShortbones" alt="Skeletal System">
+            <img src="Images/Image Osteoporosis" alt="Skeletal System">
         </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Osteoarthritis</div>
-        <p>Breakdown of cartilage causing bone-on-bone friction and pain.</p>
+        <div>
+          <div class="highlight">Osteoarthritis</div>
+          <p>Breakdown of cartilage causing bone-on-bone friction and pain.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Osteoarthritis" alt="Skeletal System">
+        </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Fractures</div>
-        <p>Cracks or breaks in bones, classified by type and severity.</p>
+        <div>
+          <div class="highlight">Fractures</div>
+          <p>Cracks or breaks in bones, classified by type and severity.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Fractures" alt="Skeletal System">
+        </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Dislocations</div>
-        <p>Bones forced out of normal alignment at joints.</p>
+        <div>
+          <div class="highlight">Dislocations</div>
+          <p>Bones forced out of normal alignment at joints.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Dislocations" alt="Skeletal System">
+        </div>
       </div>
     </div>
   </div>
@@ -203,20 +256,40 @@
     <h1 class="section-title">Parts of the Bone</h1>
     <div class="container">
       <div class="content-box">
-        <div class="highlight">Red Bone Marrow</div>
-        <p>Produces blood cells through hematopoiesis.</p>
+        <div>
+          <div class="highlight">Red Bone Marrow</div>
+          <p>Produces blood cells through hematopoiesis.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Red marrow" alt="Skeletal System">
+        </div>
+      </div>
+            <div class="content-box">
+        <div>
+          <div class="highlight">Yellow Bone Marrow</div>
+          <p>Stores fat for energy.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Yellow Marrow" alt="Skeletal System">
+        </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Yellow Bone Marrow</div>
-        <p>Stores fat for energy.</p>
+        <div>
+          <div class="highlight">Compact Bone</div>
+          <p>Dense outer layer providing strength and protection.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Compact bone" alt="Skeletal System">
+        </div>
       </div>
       <div class="content-box">
-        <div class="highlight">Compact Bone</div>
-        <p>Dense outer layer providing strength and protection.</p>
-      </div>
-      <div class="content-box">
-        <div class="highlight">Spongy Bone</div>
-        <p>Lightweight, porous structure reducing bone weight.</p>
+        <div>
+          <div class="highlight">Spongy Bone</div>
+          <p>Lightweight, porous structure reducing bone weight.</p>
+        </div>
+        <div class="image">
+            <img src="Images/Image Spongy Bone" alt="Skeletal System">
+        </div>
       </div>
     </div>
   </div>
@@ -226,12 +299,36 @@
     <h1 class="section-title">Fun Facts</h1>
     <div class="container">
       <div class="content-box">
-        <ul>
-          <li class="highlight">The hyoid bone is not connected to any other bone.</li>
-          <li class="highlight">The adult skeleton is replaced about every 10 years.</li>
-          <li class="highlight">The smallest bone is the stapes (3 mm).</li>
-          <li class="highlight">The "funny bone" is not actually a bone.</li>
-        </ul>
+        <div>
+          <div class="highlight">The hyoid bone is not connected to any other bone.</div>
+        </div>
+        <div class="image">
+            <img src="Images/Image Hyoid bone" alt="Skeletal System">
+        </div>
+      </div>
+      <div class="content-box">
+        <div>
+          <div class="highlight">The adult skeleton is replaced about every 10 years.</div>
+        </div>
+        <div class="image">
+            <img src="Images/Image SKFunfact" alt="Skeletal System">
+        </div>
+      </div>
+      <div class="content-box">
+        <div>
+          <div class="highlight">The smallest bone is the stapes (3 mm).</div>
+        </div>
+        <div class="image">
+            <img src="Images/Image Stapes" alt="Skeletal System">
+        </div>
+      </div>
+      <div class="content-box">
+        <div>
+          <div class="highlight">The "funny bone" is not actually a bone.</div>
+        </div>
+        <div class="image">
+            <img src="Images/Image Funny bone" alt="Skeletal System">
+        </div>
       </div>
     </div>
   </div>
